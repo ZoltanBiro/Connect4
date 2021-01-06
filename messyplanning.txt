@@ -1,10 +1,10 @@
-Connect 4 messy planning.
+Connect 4 messy planning. --- Deliverable 1
 
 important dates
-jan 20 - planning done?
-jan 22 - code done?
-Jan 28 - the interview
-but..... jan 29 is the due due date
+jan 8 - planning done
+jan 22 - code done
+Jan 25 - test and debug start
+jan 29 is the due due date and interview
 
 ----------------------------------------
 components of connect 4
