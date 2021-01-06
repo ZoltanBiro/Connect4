@@ -1,0 +1,63 @@
+Connect 4 messy planning.
+
+important dates
+jan 20 - planning done?
+jan 22 - code done?
+Jan 28 - the interview
+but..... jan 29 is the due due date
+
+----------------------------------------
+components of connect 4
+
+- stacking on inputted collums
+- types of wins
+	- horizontal 
+	- vertical
+	- diagonally (positive y=x /)
+	- diagonally (negative y=-x \)
+- stopping at the top
+- the board
+	- 7x6
+- differenciate between 2 player's colours
+
+-----------------------------------
+conponens of the rest of the progarm
+
+- intro screen
+- option to exit
+- mouse controll
+- graphics
+- need to do it OOP for good marks
+
+---------------------------------------------
+setup of classes, behaviours, and properties
+
+class - board
+		Properties + description
+		- will be the class where information is stored
+		- a pre created object will be the board with each collum as it's own list of integers
+		- 1 for player 1, 2 for player 2, 0 for not occupied
+		
+	Behaviours
+		- check win
+			- will check if a player has won in all directions
+			- will stay efficient and only check a if there enough pieces in the row/collum/diagonal for any player to have won
+			
+		- draw piece
+			- will draw a piece to the correct spot on the board
+
+
+
+--------------------------------------------------------
+things to do if I have time
+
+- single player (I have to make a connect 4 ai)
+- animatted piece dropping
+- 3 player connect 3
+
+
+
+
+
+
+
