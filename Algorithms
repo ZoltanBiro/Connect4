@@ -1,0 +1,43 @@
+Check win - the function that checks if a player has won
+
+// to check horizontal wins
+did the row the piece was dropped into have 4 or more pieces in it.
+  yes
+    create a list of the positions in that row
+      for as many more pieces than 3 there are in that row
+        for each instance where: the value minus its position of the first 4 numbers in that list are the same
+          if the colours of those 4 pieces are the same
+            that player wins
+        if not, check the next 4 pieces 
+        
+// to check vertival wins
+did the columb the piece was dropped into have 4 or more in it?
+  for as many more than 3 pieces there are in the columb
+    if the 4 pieces are the same colour
+      that player wins
+    if not, check the next 4
+    
+// to check diagonal wins in the positive direction
+If there are 4 or more pieces in the diagonal that piece was dropped into
+  create a list of columb positions that are occupied by a piece. 
+    for each instance where: the value minus its position of the first 4 numbers in that list are the same
+      if the colours of those 4 pieces are the same
+        that player wins
+      if not check the next 4 pieces  
+
+// the negative direction will be the same
+
+
+Main function
+
+draw the board 
+until someone wins
+  one player places a piece
+  check win 
+  change player's turn
+  if check win
+    show win screen
+  
+    
+  
+          
