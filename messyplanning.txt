@@ -30,13 +30,15 @@ conponens of the rest of the progarm
 - need to do it OOP for good marks
 
 ---------------------------------------------
-setup of classes, behaviours, and properties
+setup of methods, classes, behaviours, and properties
 
+there will be an Enum of the colours
+	
 class - board
-		Properties + description
+	Properties + description
 		- will be the class where information is stored
 		- a pre created object will be the board with each collum as it's own list of integers
-		- 1 for player 1, 2 for player 2, 0 for not occupied
+		- ArrayList<ArrayList<colour>> field = new ArrayList<ArrayList<colour>>();
 		
 	Behaviours
 		- check win
@@ -46,7 +48,31 @@ class - board
 		- draw piece
 			- will draw a piece to the correct spot on the board
 
-
+class player
+	properties
+		- Name (string)
+		- Colour (enum)
+	behaviours
+		- set name (String)
+			- sets the name of the string
+		- set colour (enum)
+			- sets the colour of the player	
+			
+class create
+will have a premade class called draw
+	properties
+		- TBD
+	behaviours
+		- draw board
+		- draw piece (enum, position x, position y)
+			draws the coloured piece in the correct spot
+		- draw text (String)
+			draws little letters
+		- draw title (String)
+			draws big letters
+		
+			
+		
 
 --------------------------------------------------------
 things to do if I have time
@@ -54,6 +80,8 @@ things to do if I have time
 - single player (I have to make a connect 4 ai)
 - animatted piece dropping
 - 3 player connect 3
+- customizable player identification
+- text doc to remember scores and stats for each player
 
 
 
