@@ -5,18 +5,24 @@
  */
 package connect4v2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Zoltan
  */
 public class Connect4V2 {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
         System.out.println("------Welcome to Connect 4!-------");
-        
+        System.out.println("Menu-----");
+        System.out.println("(1) Play Game)");  
+        String opt = in.nextLine();
+        System.out.println(opt);
+
     }
     
 }
