@@ -8,6 +8,7 @@ Jan 11: Learn graphics and figure out how to draw stuff. Make behavours for the 
 Jan 12: interview with the big boss. Ask question about getting the 100
 Jan 22: pretend to have finished the code
 Jan 24: actually finish the code, plan for next week
+Jan 28: Interview with big boss --- DUE DATE
 
 
 
@@ -24,3 +25,15 @@ Jan 9: I edited and added Classes and descriptions in the messy planning, I made
     - I might make the psudocode doc more specific but thats not a priority
     - I've decided to make another aspect of profile creation where the player can choose a name and colour. 
     - It's technically the 10th right now but I havn't slept yet so this is Saturday's work
+Jan 10 - Jan 20: I struggled and procrastonated with graphics
+    - 20th, I sent a panic email to not do the graphics
+Jan 21: I worked my but off and everything is done except for checking for wins
+    - there is exception handling
+    - i have custom exceptions
+    - advanced features I added for marks
+        - Linear search
+        - Enum
+        - Error handling
+        - Custom exception (this one deserved it's own bullet point, it was confusing)
+            
+   
