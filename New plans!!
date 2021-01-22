@@ -1,0 +1,30 @@
+I'VE CHANGED THE PLANS!!!!!
+
+Why:
+I've been troubleshooting learning graphics for like 2 weeks.
+I've worked on some structures of the logic classes.
+Then I sent the emil (you remember) and you said not only was it fine but that I could probably do better without graphics
+  This is when the plans changed.
+  
+New class structures. ---------------------
+
+Main class
+  - runs everything
+  - methods
+    - menu
+      - will contain options that string from the menu
+      - I will only start with the "play game option" and do more features if I have time
+      - will launch into the game and other feathers from a switch
+    - play
+      - launches the game
+      - initiatalizes the board from the logic class
+      - will do 3 things, in this order
+        - draw the board
+        - accept input
+        - check if winning conditions are met
+Logic class
+  - same as before
+  -"drawing" (printing) will be done here
+  - will hold the board array
+  - new methods
+    - draw board
