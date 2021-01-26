@@ -18,8 +18,6 @@ public class Connect4V2 {
         if (option ==1){
             play();
         }
-        
-        
     }
     
     public static int menu(){
@@ -51,6 +49,7 @@ public class Connect4V2 {
         Logic game = new Logic();
         Scanner in = new Scanner(System.in);
         int option = 0;
+        State win = State.O;
         int p =1;
         
         do{
@@ -64,13 +63,20 @@ public class Connect4V2 {
                     option = in.nextInt();                    
                     try{
                         Validate.isASlot(option,game.board);
+                        
                         if (p==1){
                             p=2;
                             game.addPiece(State.r,option);
+                            if(game.checkWin(option)){
+                                win=State.r;
+                            }
                         }
                         else if (p==2){
                             p=1;
                             game.addPiece(State.y,option);
+                            if(game.checkWin(option)){
+                                win=State.y;
+                            }
                         }
                     }
                     catch(InvalidSlot f){
@@ -82,12 +88,42 @@ public class Connect4V2 {
                     in.next(); 
                 }    
             }while (option>7|| option<1); 
-            game.checkWin(option);
-        }while(1==1);
-
+            
+        }while(win==State.O);
+        game.drawBoard();
+        winMessage(win);
+        System.out.println("Would you like a copy of the board? yes(1) no(2): ");
+        do{
+        try{
+            option = in.nextInt();
+            try{
+                Validate.isAnOption(option);
+                game.outputBoard();
+                break;
+            }
+            catch(InvalidOption e){
+                System.out.println("\nPlease choose 1 or 2");    
+            }
+        }
+        catch(Exception e){
+            System.out.println("\nPlease only input a number.");
+            in.next();
+        }
+        }while(option!=1);
     }
-    //public int input(){
-        
-    //}
+   
+    public static void winMessage(State winner){
+        int winna=0;
+        if (winner == State.r){
+            winna =1;
+        }
+        else{
+            winna =2;
+        }
+        System.out.println("-------Congradulations!---------");
+        System.out.println("Player "+winna+" wins!");
+    }
+    
+    
+    
 }
-
