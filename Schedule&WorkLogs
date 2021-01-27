@@ -8,6 +8,8 @@ Jan 11: Learn graphics and figure out how to draw stuff. Make behavours for the 
 Jan 12: interview with the big boss. Ask question about getting the 100
 Jan 22: pretend to have finished the code
 Jan 24: actually finish the code, plan for next week
+Jan 27: pretty up the SDLC
+Jan 26-28: if you have time, do the profile thing
 Jan 28: Interview with big boss --- DUE DATE
 
 
@@ -36,6 +38,19 @@ Jan 21: I worked my but off and everything is done except for checking for wins
         - Error handling
         - Custom exception (this one deserved it's own bullet point, it was confusing)
     - I'm surprisingly on schedual. 
+Jan 26: The game was finished on Sunday.
+    - I had forgoten to upload it until today
+    - I've delayed the username ability for now
+    - Adcanved consepts you want to see:
+        - file i/OI 
+            - added the ability to print the board to a file
+        - search
+            - there is a linear search to find the first empty spot in a column
+        - enum 
+            - the state of a slot is an enum of open red or yellow
+    - it is fully bullet proffed
+    - There are custom exceptions
+        - I hope this gives me more marks
        
             
    
