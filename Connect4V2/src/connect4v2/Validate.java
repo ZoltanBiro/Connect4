@@ -9,7 +9,7 @@ package connect4v2;
 
 class Validate {
     public static void isAnOption(int opt) throws InvalidOption {
-        if (opt>1 || opt<=0) {
+        if (opt>4 || opt<=0) {
             throw new InvalidOption("Number is invalid");
         }        
     }

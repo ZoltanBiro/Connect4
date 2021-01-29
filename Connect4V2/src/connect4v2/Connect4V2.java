@@ -14,18 +14,49 @@ public class Connect4V2 {
 
         
     public static void main(String[] args) {
+        int gameNum = 1;
+        boolean stay = true;
+        do{
         int option = menu();
         if (option ==1){
-            play();
+            play(gameNum);
+            gameNum++;
         }
+        else if (option ==2){
+            rules();
+        }
+        else if(option ==3){
+            System.out.println("Bye Bye");
+            stay =false;
+        }
+        else if (option ==4){
+            System.out.println("The First row can be played "+ ((fac(4)*fac(3))-4) +" without anyone winning?\n");
+        }        
+        }while (stay);
     }
     
+    public static int fac(int base){ //recursion
+      if (base == 0){    
+        return 1;    
+      }
+      else {   
+        return(base * fac(base-1)); 
+      }
+    }
+    
+    public static void rules(){
+        Scanner in = new Scanner(System.in);
+        System.out.println("\nRules----");
+        System.out.println("Take turns dropping pieces to connect 4\nYour pieces will fall to the bottom of the board\nYou will win by getting 4 of your colour in a row\nTo place a piece press the numberd slot of the place you want to put it");
+        System.out.print("\nEnter anything to continue: ");
+        in.nextLine();
+    }
     public static int menu(){
         Scanner in = new Scanner(System.in);
         int option=0;
         System.out.println("------Welcome to Connect 4!-------");
         System.out.println("Menu----");
-        System.out.println("(1) play game");
+        System.out.println("(1) Play game\n(2) Rules\n(3) Quit\n(4) Fun connect 4 facts to use advanced coding concepts");
         do{
             System.out.print("Choose an option: ");
             try{
@@ -42,21 +73,20 @@ public class Connect4V2 {
             System.out.println("\nPlease only enter a number");
             in.next();
             }        
-        }while (option>1|| option<=0);
+        }while (option>4|| option<=0);
         return option;        
     }
-    public static void play(){
-        Logic game = new Logic();
+    
+    public static void play(int gNum){
+        Logic game = new Logic(gNum);
         Scanner in = new Scanner(System.in);
         int option = 0;
         State win = State.O;
-        int p =1;
+        int p=1;
         
         do{
             game.drawBoard();
-
             System.out.println("Player "+p +" it's your turn.");
-
             do{
             System.out.print("Which column would you like to pick: ");
                 try{
@@ -87,12 +117,12 @@ public class Connect4V2 {
                     System.out.println("\nPlease only enter a number.");
                     in.next(); 
                 }    
-            }while (option>7|| option<1); 
+            }while (option>7|| option<1);
             
         }while(win==State.O);
         game.drawBoard();
         winMessage(win);
-        System.out.println("Would you like a copy of the board? yes(1) no(2): ");
+        System.out.print("Would you like a copy of the board? yes(1) no(2): ");
         do{
         try{
             option = in.nextInt();
@@ -102,11 +132,11 @@ public class Connect4V2 {
                 break;
             }
             catch(InvalidOption e){
-                System.out.println("\nPlease choose 1 or 2");    
+                System.out.print("\nPlease choose 1 or 2: ");    
             }
         }
         catch(Exception e){
-            System.out.println("\nPlease only input a number.");
+            System.out.print("\nPlease only input a number: ");
             in.next();
         }
         }while(option!=1);

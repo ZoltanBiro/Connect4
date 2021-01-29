@@ -14,6 +14,7 @@ enum State {     //------HI MS LUCE----- here's my enum!!!
   O,r,y //stands for Enpty, Red, and Yellow
 }
 public class Logic {
+    int gameNumber;
     public State board[][] =   {{State.O,State.O,State.O,State.O,State.O,State.O},
                                 {State.O,State.O,State.O,State.O,State.O,State.O},
                                 {State.O,State.O,State.O,State.O,State.O,State.O},
@@ -22,8 +23,8 @@ public class Logic {
                                 {State.O,State.O,State.O,State.O,State.O,State.O},
                                 {State.O,State.O,State.O,State.O,State.O,State.O}
                                 };
-    public Logic(){
-    
+    public Logic(int gNum){
+        gameNumber = gNum;
     }
     
     public Boolean checkWin(int pos){
@@ -71,43 +72,49 @@ public class Logic {
         }
         
         //diagonal win: positive direction-------------------
-        int minHeight =0;
-        int minPos =0;       
+        
+
+        int minHeight =height;
+        int minPos =0;    
+        
         if (pos-height<4 && pos-height>-3){
-            for (int i=pos; i>=0;i--){
-            if (i==0||height==0){                
-                minHeight =height;
-                minPos = i;
-                break;
+            for (int i=pos; i>=0; i--){
+                if (i==0||minHeight==0){                
+                    minPos = i;
+                    break;
+                }            
+            minHeight--;
             }            
-            height--;
-            }
             do{
                 if (board[minPos][minHeight]==board[1+minPos][1+minHeight]&&board[minPos][minHeight]==board[2+minPos][2+minHeight]&&board[minPos][minHeight]==board[3+minPos][3+minHeight]&&board[minPos][minHeight]!=State.O){
                     won = true;
                 }
+
                 minHeight++; minPos++;
-            }while(minHeight+3>=5&&minPos+3>=6);
+
+            }while(minHeight+3<=5 && minPos+3<=6);
         }      
         
         // diagonal win: negative direction-------------------
-        minHeight =0;
+        minHeight =height;
         int maxPos =0;       
-        if (pos+height<2 && pos+height>9){
-            for (int i=pos; i<=6;i++){
-            if (i==6||height==0){                
-                minHeight =height;
-                minPos = i;
-                break;
-            }            
-            height--;
+        if (pos+height>2 && pos+height<9){
+            for (int i=pos; i<=6; i++){
+                if (i==6||minHeight==0){
+                    maxPos = i;
+                    break;
+                }            
+            minHeight--;
             }
+            //System.out.println("min negative "+maxPos+" "+minHeight);
             do{
+                //System.out.println("max positive "+(maxPos-3)+" "+(minHeight+3) );
                 if (board[maxPos][minHeight]==board[maxPos-1][1+minHeight] && board[maxPos][minHeight]==board[maxPos-2][2+minHeight] && board[maxPos][minHeight]==board[maxPos-3][3+minHeight]&&board[maxPos][minHeight]!=State.O){
                     won = true;
+                    break;
                 }
                 minHeight++; maxPos--;
-            }while(minHeight+3>=5&&maxPos+3<=0);
+            }while(minHeight+3<=5&&maxPos-3>=0);
         }     
         
         return won;
@@ -135,7 +142,7 @@ public class Logic {
     }
     public void outputBoard(){
         try {
-            FileWriter myWriter = new FileWriter("Board.txt");
+            FileWriter myWriter = new FileWriter("Board"+gameNumber+".txt");
             for (int row = 5; row>=0; row--){
                 for (int col=0; col<=6; col++){
                     myWriter.write(board[col][row]+"\t");

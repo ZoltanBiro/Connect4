@@ -1,0 +1,6 @@
+O	O	O	O	O	O	r	
+O	O	O	O	O	r	y	
+O	O	O	O	r	r	r	
+O	O	O	r	r	y	y	
+O	O	O	y	y	r	r	
+y	O	O	r	y	y	y	
